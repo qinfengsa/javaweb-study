@@ -31,6 +31,14 @@
         <servlet-name>servletContext</servlet-name>
         <servlet-class>org.example.servlet.ServletContextDemo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>cookieDemo</servlet-name>
+        <servlet-class>org.example.cookie.CookieDemo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>sessionDemo</servlet-name>
+        <servlet-class>org.example.session.SessionDemo</servlet-class>
+    </servlet>
     <!-- mapping -->
     <servlet-mapping>
         <servlet-name>demo1</servlet-name>
@@ -55,9 +63,24 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
+    <!-- cookie demo -->
+    <servlet-mapping>
+        <servlet-name>cookieDemo</servlet-name>
+        <url-pattern>/cookie</url-pattern>
+    </servlet-mapping>
+    <!-- session demo -->
+    <servlet-mapping>
+        <servlet-name>sessionDemo</servlet-name>
+        <url-pattern>/session</url-pattern>
+    </servlet-mapping>
+
     <!-- context 参数 -->
     <context-param>
         <param-name>name</param-name>
         <param-value>context-test</param-value>
     </context-param>
+    <!-- 设置Session的有效时间:以分钟为单位-->
+    <session-config>
+        <session-timeout>15</session-timeout>
+    </session-config>
 </web-app>
